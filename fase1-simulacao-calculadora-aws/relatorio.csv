@@ -1,0 +1,37 @@
+"Relatório Executivo - Portfólio AWS","Data: Fevereiro 2026","","","",""
+
+"","","","","",""
+
+"1. Executive Summary","","","",""
+
+"Categoria","Serviço","Ambiente","Custo Mensal (USD)","Custo Anual (USD)"
+
+"Compute","Amazon EC2","Produção","1262.21","15146.46"
+"Networking","Application Load Balancer","Prod/HML/Dev","291.27","3495.24"
+"Storage","Amazon Elastic File System (EFS)","Prod/HML/Dev","997.50","11970.00"
+"Compute","Amazon EC2","HML/Dev","726.29","8715.42"
+"Database","Amazon RDS for Oracle","Produção","15790.12","189481.44"
+"Database","Amazon RDS for Oracle","Homologação","3926.24","47114.88"
+"Database","Amazon RDS for Oracle","Desenvolvimento","1832.40","21988.80"
+"Support","AWS Support (Enterprise)","Global","15000.00","180000.00"
+
+"","","","",""
+
+"2. Cost By Environment (alocação proporcional de custos compartilhados)","","","",""
+"Ambiente","Total Mensal (USD)","Total Anual (USD)","",""
+"Produção","22481.52","269778.24","",""
+"Homologação","9718.97","116627.64","",""
+"Desenvolvimento","7625.13","91501.56","",""
+
+"","","","",""
+
+"3. Strategic Overview","","","",""
+"Métrica","Valor (USD)","Detalhes","Região",""
+"Total Mensal Consolidado","39826.03","Soma de todos os serviços","South America (São Paulo)",""
+"Total Anual Consolidado","477912.36","Base 12 meses sem crescimento","South America (São Paulo)",""
+"Projeção 3 Anos","1433737.08","Custos constantes × 3 anos","South America (São Paulo)",""
+"Modelo de Pagamento","Misto","On-Demand + Savings Plans 3yr No Upfront + RI 3yr No Upfront","South America (São Paulo)",""
+"Plano de Suporte","Enterprise","24/7 < 15 min resposta","Global",""
+
+"","","","",""
+
