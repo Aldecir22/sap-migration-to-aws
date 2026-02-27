@@ -1,0 +1,43 @@
+name: Deploy Portfolio para AWS
+
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    # Isso diz para o robô: "Faça tudo dentro desta subpasta!"
+    defaults:
+      run:
+        working-directory: fase2-estrategia-e-arquitetura/site-portfolio/sap-aws-architect
+
+    steps:
+    - name: 1. Pegar o código do repositório
+      uses: actions/checkout@v4
+
+    - name: 2. Preparar o ambiente Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+
+    - name: 3. Instalar dependências
+      run: npm install
+
+    - name: 4. Gerar a versão de Produção (Build)
+      run: npm run build
+
+    - name: 5. Configurar as Chaves da AWS
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_REGION }}
+
+    - name: 6. Enviar os arquivos para o S3
+      run: aws s3 sync dist/ s3://${{ secrets.S3_BUCKET_NAME }} --delete
+
+    - name: 7. Limpar o Cache do CloudFront
+      run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_ID }} --paths "/*"
