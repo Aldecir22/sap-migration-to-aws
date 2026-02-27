@@ -64,4 +64,4 @@ O projeto foi construído em fases para demonstrar a evolução lógica do plane
 ## 🌐 Showcase Interativo
 
 Para uma visualização de alto nível direcionada a executivos e recrutadores, todo este escopo técnico foi transformado em uma Landing Page interativa.
-👉 **Acesse a Apresentação Web aqui:** [Link da Lovable a ser inserido]
+👉 **Acesse a Apresentação Web aqui:** [https://d2a5j2e5sfrpg9.cloudfront.net/]

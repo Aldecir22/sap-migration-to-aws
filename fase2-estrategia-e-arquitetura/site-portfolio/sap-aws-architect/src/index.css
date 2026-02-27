@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 95%;
+
+    --card: 222 41% 10%;
+    --card-foreground: 210 40% 95%;
+
+    --popover: 222 41% 10%;
+    --popover-foreground: 210 40% 95%;
+
+    --primary: 27 96% 54%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 215 28% 16%;
+    --secondary-foreground: 210 40% 90%;
+
+    --muted: 217 25% 14%;
+    --muted-foreground: 215 18% 55%;
+
+    --accent: 27 96% 54%;
+    --accent-foreground: 222 47% 6%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 20% 18%;
+    --input: 217 20% 18%;
+    --ring: 27 96% 54%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 222 41% 8%;
+    --sidebar-foreground: 210 40% 90%;
+    --sidebar-primary: 27 96% 54%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 217 25% 14%;
+    --sidebar-accent-foreground: 210 40% 90%;
+    --sidebar-border: 217 20% 18%;
+    --sidebar-ring: 27 96% 54%;
+
+    /* Custom tokens */
+    --aws-orange: 27 96% 54%;
+    --aws-orange-glow: 27 96% 64%;
+    --midnight: 222 47% 6%;
+    --slate-deep: 222 41% 10%;
+    --glass-bg: 222 41% 12%;
+    --glass-border: 217 20% 22%;
+    --success: 152 60% 45%;
+    --success-foreground: 152 60% 95%;
+    --chart-blue: 210 80% 55%;
+    --chart-green: 152 60% 45%;
+    --chart-amber: 38 92% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply rounded-xl border;
+    background: hsla(var(--glass-bg) / 0.6);
+    border-color: hsla(var(--glass-border) / 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300;
+  }
+
+  .glass-card-hover:hover {
+    border-color: hsla(var(--aws-orange) / 0.4);
+    box-shadow: 0 0 30px -10px hsla(var(--aws-orange) / 0.15);
+    transform: translateY(-2px);
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--aws-orange)), hsl(var(--aws-orange-glow)));
+  }
+
+  .glow-line {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(var(--aws-orange)), transparent);
+  }
+
+  .section-fade {
+    @apply relative;
+  }
+
+  .section-fade::before {
+    content: '';
+    @apply absolute inset-0 pointer-events-none;
+    background: radial-gradient(ellipse at center top, hsla(var(--aws-orange) / 0.03) 0%, transparent 70%);
+  }
+}
